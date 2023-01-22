@@ -3,10 +3,10 @@ name: My Project Workflow
 on:
   push:
     branches:
-      - main
+      - ex2
   pull_request:
     branches:
-      - main
+      - ex2
 
 jobs:
   build:
