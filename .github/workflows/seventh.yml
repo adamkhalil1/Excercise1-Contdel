@@ -1,6 +1,9 @@
 name: Java CI 02 for deploy artifacts
 run-name: ${{ github.actor }} will deploy artifacts 🚀
-on: [pull_request]
+on:
+  pull_request:
+    branches:
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -11,7 +14,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: 19
-          distribution: adopt
+          distribution: adoptopenjdk
       - name: Build with Maven
         run: mvn --batch-mode --update-snapshots package
       - name: Move artifacts
@@ -25,9 +28,9 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 14
-          script: |
-            npm install -g now
-            now --token $NOW_TOKEN --prod
+        run: |
+          npm install -g now
+          now --token $NOW_TOKEN --prod
       - name: CINotify Email
         uses: cinotify/github-action@main
         with:
