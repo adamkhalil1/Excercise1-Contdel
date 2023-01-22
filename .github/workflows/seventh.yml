@@ -21,6 +21,22 @@ jobs:
         with:
           name: Package
           path: staging
+      - name: Run unit tests
+        run: mvn test
+      - name: Deploy to staging server
+        run: now --token $NOW_TOKEN --prod
+      - name: Create GitHub Release
+        uses: actions/create-release@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ env.VERSION }}
+          release_name: Release v${{ env.VERSION }}
+          draft: false
+          prerelease: false
+      - name: CINotify Email
+        uses: cinotify/github-action
+
 
 
 
