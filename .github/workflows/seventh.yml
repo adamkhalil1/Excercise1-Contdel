@@ -37,10 +37,9 @@ jobs:
           script: |
             npm install -g now
             now --token $NOW_TOKEN --prod
-      - name: Send email notification on failure
-        uses: peter-evans/email-on-error@v1
-        if: failure()
+      - name: CINotify Email
+        uses: cinotify/github-action@main
         with:
-          to: your_email@example.com
-          subject: My Project Deployment Failed
-          body: The My Project workflow has failed. Please check the logs for more details
+          to: 'adam.khalil@fh-joanneum.at'
+          subject: 'building '
+          body: 'This is a notification from GitHub actions.'
