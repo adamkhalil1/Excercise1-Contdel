@@ -1,4 +1,4 @@
-name: Java CI 01 for compile sources
+name: Java CI 01 for compile sources but this time cached
 run-name: ${{ github.actor }} runs compile sources 🚀
 on: [push]
 jobs:
