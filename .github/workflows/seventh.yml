@@ -23,8 +23,12 @@ jobs:
           path: staging
       - name: Run unit tests
         run: mvn test
-      - name: Deploy to staging server
-        run: now --token $NOW_TOKEN --prod
+      - name: CINotify Email
+        uses: cinotify/github-action@v1.1.0
+        with:
+          to: 'adam.khalil@edu.fh-joanneum.at'
+          subject: 'building teeeeest'
+          body: 'This is a notification from GitHub actions.'
 
 
 
