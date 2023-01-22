@@ -37,11 +37,10 @@ jobs:
           script: |
             npm install -g now
             now --token $NOW_TOKEN --prod
-      - name: Send email notification
-        uses: actions/email@v3
+      - name: Send email notification on failure
+        uses: peter-evans/email-on-error@v1
+        if: failure()
         with:
-          to: adam.khalil@edu.fh-joanneum.at
-          subject: Successful Deployment of My Project
-          body: The My Project workflow has successfully completed. The latest version has been deployed to the staging server.
-          env:
-          EMAIL_TOKEN: ${{ secrets.EMAIL_TOKEN }}
+          to: your_email@example.com
+          subject: My Project Deployment Failed
+          body: The My Project workflow has failed. Please check the logs for more details
