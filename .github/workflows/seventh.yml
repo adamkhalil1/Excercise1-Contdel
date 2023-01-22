@@ -34,14 +34,14 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 14
-        run: |
-          npm install -g now
-          now --token $NOW_TOKEN --prod
+          script: |
+            npm install -g now
+            now --token $NOW_TOKEN --prod
       - name: Send email notification
         uses: actions/email@v3
         with:
           to: adam.khalil@edu.fh-joanneum.at
           subject: Successful Deployment of My Project
           body: The My Project workflow has successfully completed. The latest version has been deployed to the staging server.
-        env:
+          env:
           EMAIL_TOKEN: ${{ secrets.EMAIL_TOKEN }}
