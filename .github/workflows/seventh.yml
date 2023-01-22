@@ -1,12 +1,12 @@
-name: My Project Workflow
+name: Java CI 01 own actions
 
 on:
   push:
     branches:
-      - main
+      - ex2
   pull_request:
     branches:
-      - main
+      - ex2
 
 jobs:
   build:
@@ -14,10 +14,10 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
-      - name: Set up JDK 19
+      - name: Set up JDK 8
         uses: actions/setup-java@v3
         with:
-          java-version: 19
+          java-version: 8
           distribution: openjdk
       - name: Run gradle build
         run: gradle build
