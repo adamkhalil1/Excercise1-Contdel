@@ -3,10 +3,10 @@ name: My Project Workflow
 on:
   push:
     branches:
-      - ex2
+      - ex1.4
   pull_request:
     branches:
-      - ex2
+      - ex1.4
 
 jobs:
   build:
@@ -40,7 +40,7 @@ jobs:
       - name: Send email notification
         uses: actions/email@v3
         with:
-          to: your_email@example.com
+          to: adam.khalil@edu.fh-joanneum.at
           subject: Successful Deployment of My Project
           body: The My Project workflow has successfully completed. The latest version has been deployed to the staging server.
         env:
