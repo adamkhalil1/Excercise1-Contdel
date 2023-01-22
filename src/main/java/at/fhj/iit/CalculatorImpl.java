@@ -29,7 +29,7 @@ public class CalculatorImpl implements Calculator {
 
 	/**
 	 * Calculates <b>Difference</b> of two numbers
-	 * @param number1
+	 * @param   number1
 	 * @param number2
 	 * @return diff of number1 - number2
 	 */
