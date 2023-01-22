@@ -34,8 +34,7 @@ jobs:
           release_name: Release v${{ env.VERSION }}
           draft: false
           prerelease: false
-      - name: CINotify Email
-        uses: cinotify/github-action
+
 
 
 
