@@ -30,6 +30,7 @@ Please make sure to update tests as appropriate.
 [GNU GPLv3](https://choosealicense.com/licenses/gpl-3.0/)
 
 # Dokumenation 
+## Dokumenation Excercise 1
 ALLE Schritte konnten ohne gröbere Vorkomnnisse(syntax fixes) erledigt werde.
 (Bennenung bitte ignorieren) aber im seventh.yml befinden sich der eigene Workflow 
 
@@ -82,3 +83,31 @@ getestet werden? (Stichwort: Matrix Strategy):
 6. Um unterschiedliche Versionen von Java zu testen, kann man die Matrix-Strategie verwenden, bei der man mehrere Variablen definiert, 
    die die Versionen der zu testenden Software darstellen und die Schritte des Workflows mehrfach mit unterschiedlichen Werten dieser 
    Variablen ausführt. Auf diese Weise kann man sicherstellen, dass das Projekt auf allen unterstützten Plattformen ordnungsgemäß funktioniert.
+
+## Dokumenation Excercise 2
+Alle Schritte konnten erfolgreich durchgeführt werden
+Im Grunde genommen habe ich einfach ihre steps nachgemacht und recherchiert, anfangs hatte ich viele Problem war teilweise typos verschuldet teilweise
+fehlender configuration in der pom.xml alle fehler konnten aber behoben werden.
+
+Hatte erst auch nicht die richtige Version der tar genommen aber mittels ls schnel rausgefunden dass ich da eine falsche version verwendet habe danch wurde
+die calculation auch richtig durchgeführt. 
+
+Folgende pom.xml anpassung hat mich viel Zeit gekostet:
+<configuration>
+<source>1.8</source>
+<target>1.8</target>
+</configuration>
+
+Zudem musste ich im dockerfile eine andere Version nehmen da ich keine Rechte auf andere Versionen hatte:
+FROM eclipse-temurin:11
+WORKDIR /project
+COPY target/*.jar .
+
+Danch habe ich noch gemerkt dass mir ein File zerschossen wurde(sixth.yml the stylchecker) wurde angepasst und läuft wieder.
+
+Für den build befehl selbst habe ich folgendes verwendet: docker build -t adamkhalil/calcapp .
+für den container start :  docker run --name calcapp -it --entrypoint /bin/sh adamkhalil/calcapp
+
+Ansonsten gab es keine besonderheiten 
+login und push waren einwandfrei
+Näher siehe code in third.yml udn dockerfile 
