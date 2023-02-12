@@ -71,4 +71,4 @@ sixth yml  checks and reacts to fith xml file if fail or not
 ![image info](screenshots/sixth.png)
 
 seventh yml triggered checks and reacts to fith xml file if fail or not
-![image info](screenshots/sixth.png)
+![image info](screenshots/seventh.png)
