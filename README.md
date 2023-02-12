@@ -67,5 +67,5 @@ fourth yml triggered by push creates/builds artifacts
 fith yml triggered pull request and checks the coding style
 ![image info](screenshots/fith.png)
 
-sixth yml triggered pull request and checks the coding style
+sixth yml triggered checks and reacts to fith xml file if fail or not
 ![image info](screenshots/sixth.png)
