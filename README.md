@@ -64,5 +64,5 @@ Third yml triggered by push builds maven package and caches it result is much fa
 fourth yml triggered by push creates/builds artifacts
 ![image info](screenshots/third.png)
 
-fith yml triggered by push creates/builds artifacts
-![image info](screenshots/third.png)
+fith yml triggered pull request and checks the coding style
+![image info](screenshots/fith.png)
