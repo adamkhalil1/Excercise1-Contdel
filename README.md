@@ -70,5 +70,6 @@ fith yml triggered pull request and checks the coding style
 sixth yml  checks and reacts to fith xml file if fail or not
 ![image info](screenshots/sixth.png)
 
-seventh yml triggered checks and reacts to fith xml file if fail or not
+seventh yml triggered on push, own action uses cinotifier to send a message whenever the job is sucessfully
+finished
 ![image info](screenshots/seventh.png)
