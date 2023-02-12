@@ -60,3 +60,9 @@ Second triggered by push  builds maven package
 
 Third yml triggered by push builds maven package and caches it result is much faster
 ![image info](screenshots/third.png)
+
+fourth yml triggered by push creates/builds artifacts
+![image info](screenshots/third.png)
+
+fith yml triggered by push creates/builds artifacts
+![image info](screenshots/third.png)
